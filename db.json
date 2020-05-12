@@ -1,0 +1,200 @@
+{
+  "receipts": [
+    {
+      "id": "0d5ae2af-1d2d-4558-93a5-cc05db945b73",
+      "date": "2020-05-12T10:27:06.392Z",
+      "shop": "Кировский",
+      "products": [
+        {
+          "id": "04ad2cf6-e9a8-44ae-a447-0ae8056c1b22",
+          "category": "Еда",
+          "name": "Сыр",
+          "unit": "Шт",
+          "cost": "400",
+          "count": "0.555"
+        },
+        {
+          "id": "9cc644ff-1ac3-4a5a-8624-1c5a370fdf40",
+          "category": "Еда",
+          "name": "Хлеб",
+          "unit": "Шт",
+          "cost": "35.88",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "3db1f132-c602-4107-88f4-cc09c8fbb590",
+      "date": "2020-05-12T12:38:59.663Z",
+      "shop": "Кировский",
+      "products": [
+        {
+          "id": "0559d9aa-75d7-403f-aee3-87042ef3f1e0",
+          "category": "Еда",
+          "name": "Колбаса",
+          "unit": "Кг",
+          "cost": "500",
+          "count": "0.45"
+        },
+        {
+          "id": "af6c6dfb-029d-4358-ab79-60336ec81b50",
+          "category": "Еда",
+          "name": "Молоко",
+          "unit": "Л",
+          "cost": "35",
+          "count": "0.5"
+        }
+      ]
+    },
+    {
+      "id": "d8e5dd99-05b5-4c38-8112-36f7edbe242a",
+      "date": "2020-05-12T12:51:31.527Z",
+      "shop": "Дом",
+      "products": [
+        {
+          "id": "ef1947bb-ec14-43cc-877c-cd672cca03ca",
+          "category": "Еда",
+          "name": "1",
+          "unit": "Шт",
+          "cost": "0333",
+          "count": 1
+        },
+        {
+          "id": "d74a58d1-bfda-44d3-9dd9-163217fd2d73",
+          "category": "Еда",
+          "name": "2",
+          "unit": "Шт",
+          "cost": "033",
+          "count": 1
+        },
+        {
+          "id": "6c815a29-bcad-43aa-a761-5bb4be84bfc6",
+          "category": "Еда",
+          "name": "3",
+          "unit": "Шт",
+          "cost": "033",
+          "count": 1
+        },
+        {
+          "id": "82712171-a5a4-4456-aeb2-bff45b2321af",
+          "category": "Еда",
+          "name": "4",
+          "unit": "Шт",
+          "cost": "033",
+          "count": 1
+        },
+        {
+          "id": "a6735b82-6b2c-4989-82b9-b6059a05dd22",
+          "category": "Еда",
+          "name": "5",
+          "unit": "Шт",
+          "cost": 0,
+          "count": 1
+        },
+        {
+          "id": "7149cfce-568e-4dd7-8870-86870722f62d",
+          "category": "Еда",
+          "name": "6",
+          "unit": "Шт",
+          "cost": "033",
+          "count": 1
+        },
+        {
+          "id": "d493b594-92ce-49b1-8cb6-80dcbc569b0b",
+          "category": "Еда",
+          "name": "7",
+          "unit": "Шт",
+          "cost": "033",
+          "count": 1
+        },
+        {
+          "id": "cfee6254-4ddb-406c-826d-a945daa2450c",
+          "category": "Еда",
+          "name": "8",
+          "unit": "Шт",
+          "cost": "033",
+          "count": 1
+        },
+        {
+          "id": "0ac56e68-b34b-4080-b048-d91e9a84586d",
+          "category": "Еда",
+          "name": "9",
+          "unit": "Шт",
+          "cost": "033",
+          "count": 1
+        },
+        {
+          "id": "c31f69e2-cb6f-44ec-b8b5-f1b75e4e1433",
+          "category": "Еда",
+          "name": "0",
+          "unit": "Шт",
+          "cost": "033",
+          "count": 1
+        },
+        {
+          "id": "1fc80de3-396c-4593-90f3-27a8ee678e8d",
+          "category": "Еда",
+          "name": "10",
+          "unit": "Шт",
+          "cost": "033",
+          "count": 1
+        },
+        {
+          "id": "dc900a5d-a46b-47b2-8048-bd74529ab16e",
+          "category": "Еда",
+          "name": "11",
+          "unit": "Шт",
+          "cost": "023",
+          "count": 1
+        },
+        {
+          "id": "1e7bc2a0-81e0-4eed-beb5-be0494028eba",
+          "category": "Еда",
+          "name": "12",
+          "unit": "Шт",
+          "cost": "3",
+          "count": 1
+        },
+        {
+          "id": "b560713d-a0d9-4627-81a8-dd21bcabde32",
+          "category": "Еда",
+          "name": "",
+          "unit": "Шт",
+          "cost": 0,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "ab89e244-dd34-4ae4-a775-ad579abc4397",
+      "date": "2020-05-12T13:01:13.572Z",
+      "shop": "",
+      "products": [
+        {
+          "id": "a6e1ae70-5915-45a9-98e3-7aa4345cd5e6",
+          "category": "Еда",
+          "name": "",
+          "unit": "Шт",
+          "cost": "03",
+          "count": 1
+        },
+        {
+          "id": "83f20cbb-84f4-48a0-939a-012abeceb3f8",
+          "category": "Еда",
+          "name": "",
+          "unit": "Шт",
+          "cost": 0,
+          "count": 1
+        },
+        {
+          "id": "72965cd5-f2ce-4a60-9194-e341838b661b",
+          "category": "Еда",
+          "name": "",
+          "unit": "Шт",
+          "cost": 0,
+          "count": 1
+        }
+      ]
+    }
+  ]
+}
