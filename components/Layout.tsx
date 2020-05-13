@@ -17,10 +17,8 @@ export default function Layout({
           <link rel='icon' href='/favicon.ico' />
         </Head>
 
-        <main>
-          <Nav></Nav>
-          {children}
-        </main>
+        <Nav></Nav>
+        <main>{children}</main>
 
         <footer>Фуутер</footer>
       </div>
@@ -28,25 +26,26 @@ export default function Layout({
       <style jsx>{`
         .container {
           width: 1024px;
-          padding: 1em;
           margin: 0 auto;
           border: 1px solid #f3f3f3;
-          height: 100vh;
+          min-height: 100vh;
           background-color: #ffffff;
         }
 
         main {
+          padding: 1em;
           padding-bottom: 100px;
         }
 
         footer {
           position: fixed;
           bottom: 0;
-          width: calc(1024px - 2em);
+          width: 1022px;
           height: 50px;
           line-height: 50px;
           text-align: center;
           background-color: #f7f7f7;
+          border-top: 1px solid #c5c5c5;
         }
       `}</style>
     </>

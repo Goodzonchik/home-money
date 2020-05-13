@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import Router from 'next/router';
 
 import * as uuid from 'uuid';
 
 import axios from 'axios';
 import ProductAdd from './ProductAdd';
 import Layout from './Layout';
+import calcTotal from '../utils/calculation';
 
 const initReceipt = {
   id: uuid.v4(),
@@ -17,13 +19,15 @@ export default function ReceiptAdd() {
   const [receipt, setReceipt] = useState(initReceipt);
 
   function save() {
-    if (
-      receipt.products.reduce(
-        (acc, product) => acc + product.cost * product.count,
-        0
-      ) > 0
-    )
-      axios.post('api/add-receipt', receipt);
+    if (calcTotal(receipt.products) > 0)
+      axios
+        .post('api/add-receipt', receipt)
+        .then(() => {
+          Router.push(`/receipt/${receipt.id}`);
+        })
+        .catch(() => {
+          alert('При сохранении произошла ошибка');
+        });
   }
 
   function addProduct() {

@@ -2,6 +2,7 @@ import Layout from '../../components/Layout';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import dateFormatter from '../../utils/formatters';
+import calcTotal from '../../utils/calculation';
 
 export default function Receipts(props) {
   const [receipts, setReceipts] = useState([]);
@@ -32,14 +33,7 @@ export default function Receipts(props) {
                 <tr key={item.id} className={'peceipt'}>
                   <td>{dateFormatter(item.date)}</td>
                   <td>{item.shop}</td>
-                  <td>
-                    {item.products
-                      .reduce(
-                        (acc, product) => acc + product.cost * product.count,
-                        0
-                      )
-                      .toFixed(2)}
-                  </td>
+                  <td>{calcTotal(item.products)} руб.</td>
                   <td>
                     <Link href={`/receipts/${item.id}`}>Посмотреть</Link>
                   </td>

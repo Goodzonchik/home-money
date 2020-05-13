@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Nav() {
   const links = [
     { url: '/receipts', title: 'Расходы' },
-    { url: '/mock', title: 'Доходы' },
+    { url: '/income', title: 'Доходы' },
     { url: '/statistic', title: 'Статистика' },
     { url: '/todo', title: 'Хотелки' },
   ];
@@ -26,7 +26,10 @@ export default function Nav() {
           justify-content: space-between;
           font-size: 1.5em;
           box-sizing: border-box;
-          padding: 0;
+          padding: 1em;
+          background-color: #fdfdfd;
+          margin: 0;
+          border-bottom: 1px solid #cacaca;
         }
       `}</style>
     </>

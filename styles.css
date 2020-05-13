@@ -9,4 +9,32 @@ body {
   background-color: #fafafa;
   height: 100vh;
   width: 100vw;
+  font: 1em 'Fira Sans', sans-serif;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+}
+
+td {
+  border-top: 1px solid black;
+  padding: 0.25em;
+  text-align: center;
+}
+
+tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+thead tr {
+  background-color: #f9f9f9;
+}
+
+button {
+  border: 1px solid #00c546;
+  padding: 0.5em 0.75em;
+  font-size: 1em;
+  background-color: #00dc4e;
+  color: white;
 }

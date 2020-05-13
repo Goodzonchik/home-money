@@ -1,5 +1,6 @@
 import Layout from '../../components/Layout';
 import dateFormatter from '../../utils/formatters';
+import calcTotal from '../../utils/calculation';
 
 export default function Receipt({ data }) {
   return (
@@ -24,8 +25,8 @@ export default function Receipt({ data }) {
                 <td>{index + 1}</td>
                 <td>{item.name}</td>
                 <td>{`${item.count} ${item.unit}.`}</td>
-                <td>{item.cost}</td>
-                <td>{(item.cost * item.count).toFixed(2)}</td>
+                <td>{item.cost} руб.</td>
+                <td>{(item.cost * item.count).toFixed(2)} руб.</td>
               </tr>
             ))}
           </tbody>
@@ -34,28 +35,13 @@ export default function Receipt({ data }) {
               <td colSpan={5}>
                 <strong>
                   <span>Итого: </span>
-                  {data.products
-                    .reduce(
-                      (acc, product) => acc + product.cost * product.count,
-                      0
-                    )
-                    .toFixed(2)}
+                  {calcTotal(data.products)}
                 </strong>
               </td>
             </tr>
           </tfoot>
         </table>
       </Layout>
-
-      <style jsx>{`
-        table {
-          width: 100%;
-        }
-
-        td {
-          border: 1px solid black;
-        }
-      `}</style>
     </>
   );
 }
@@ -67,14 +53,11 @@ const db = low(adapter);
 
 export async function getStaticPaths() {
   let paths = db.get('receipts').map('id').value();
-  if (paths) {
-    paths = paths.map((i) => {
-      return { params: { id: i } };
-    });
-  } else {
-    paths = null;
-  }
-
+  paths = paths
+    ? paths.map((i) => {
+        return { params: { id: i } };
+      })
+    : null;
   return {
     paths,
     fallback: false,
