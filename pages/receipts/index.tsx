@@ -45,21 +45,11 @@ export default function Receipts(props) {
           <h3>Нет записей, вы можете добавить новый чек</h3>
         )}
       </Layout>
-
-      <style jsx>{`
-        table {
-          width: 100%;
-        }
-
-        .td {
-          border: 1px solid black;
-        }
-      `}</style>
     </>
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const low = require('lowdb');
   const FileSync = require('lowdb/adapters/FileSync');
   const adapter = new FileSync('db.json');

@@ -7,7 +7,7 @@ import axios from 'axios';
 import Layout from './Layout';
 
 const initIncome = {
-  date: new Date().toISOString(),
+  date: '',
   amount: 0,
   description: '',
 };
@@ -45,20 +45,24 @@ export default function IncomeAdd() {
         <h1>Добавление дохода</h1>
 
         <form onSubmit={(e) => e.preventDefault()}>
-          <div>
+          <div className={'form-row'}>
             <label>Дата</label>
-            <input value={income.date} onChange={changeDate}></input>
+            <input
+              type='date'
+              value={income.date}
+              onChange={changeDate}
+            ></input>
           </div>
-          <div>
+          <div className={'form-row'}>
             <label>Сумма</label>
             <input value={income.amount} onChange={changeAmount}></input>
           </div>
-          <div>
+          <div className={'form-row'}>
             <label>Описание</label>
-            <input
+            <textarea
               value={income.description}
               onChange={changeDescription}
-            ></input>
+            ></textarea>
           </div>
           <div>
             <button onClick={save}>Save</button>

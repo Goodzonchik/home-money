@@ -31,10 +31,42 @@ thead tr {
   background-color: #f9f9f9;
 }
 
+tfoot td {
+  text-align: left;
+}
+
 button {
   border: 1px solid #00c546;
   padding: 0.5em 0.75em;
   font-size: 1em;
   background-color: #00dc4e;
   color: white;
+}
+
+.remove-button {
+  background-color: #f30000;
+  border: 1px solid #ca0000;
+}
+
+.form-row {
+  width: 100%;
+  margin-bottom: 0.5em;
+}
+
+.form-row > label {
+  width: 100%;
+  display: block;
+}
+
+.form-row > textarea {
+  resize: vertical;
+  max-height: 5em;
+}
+
+.form-row > select,
+.form-row > input,
+.form-row > textarea {
+  line-height: 1em;
+  padding: 0.5em 0.25em;
+  width: 100%;
 }

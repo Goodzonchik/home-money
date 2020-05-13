@@ -10,7 +10,7 @@ import calcTotal from '../utils/calculation';
 
 const initReceipt = {
   id: uuid.v4(),
-  date: new Date().toISOString(),
+  date: new Date().toString(),
   shop: '',
   products: [],
 };
@@ -34,9 +34,9 @@ export default function ReceiptAdd() {
     const products = receipt.products;
     products.push({
       id: uuid.v4(),
-      category: 'Еда',
+      category: '',
       name: '',
-      unit: 'Шт',
+      unit: '',
       cost: 0,
       count: 1,
     });
@@ -69,16 +69,17 @@ export default function ReceiptAdd() {
         <h1>Добавление чека</h1>
 
         <form onSubmit={(e) => e.preventDefault()}>
-          <div>
+          <div className={'form-row'}>
             <label>Дата</label>
-            <input value={receipt.date} onChange={changeDate}></input>
+            <input
+              type='date'
+              value={receipt.date}
+              onChange={changeDate}
+            ></input>
           </div>
-          <div>
+          <div className={'form-row'}>
             <label>Название магазина</label>
             <input value={receipt.shop} onChange={changeShop}></input>
-          </div>
-          <div>
-            <button onClick={addProduct}>Add product</button>
           </div>
           {receipt.products.map((product) => (
             <ProductAdd
@@ -89,7 +90,19 @@ export default function ReceiptAdd() {
             ></ProductAdd>
           ))}
           <div>
-            <button onClick={save}>Save</button>
+            <strong>
+              <span>Итого: {calcTotal(receipt.products)}</span>
+            </strong>
+          </div>
+          <div
+            style={{
+              marginTop: '0.5em',
+              display: 'flex',
+              justifyContent: 'space-between',
+            }}
+          >
+            <button onClick={save}>Сохранить</button>
+            <button onClick={addProduct}>Добавить продукт</button>
           </div>
         </form>
       </Layout>

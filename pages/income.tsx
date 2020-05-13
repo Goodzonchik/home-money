@@ -45,7 +45,7 @@ export default function Receipts(props) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const low = require('lowdb');
   const FileSync = require('lowdb/adapters/FileSync');
   const adapter = new FileSync('db.json');

@@ -29,6 +29,48 @@
       "date": "2020-05-13T06:26:48.675Z",
       "amount": "345345",
       "description": "dfgdfgd"
+    },
+    {
+      "id": "78c9a0d5-a07b-42a3-b58a-76f73457b73a",
+      "date": "2020-05-13",
+      "amount": "2020",
+      "description": "dfgdfg"
+    },
+    {
+      "id": "13e18433-24dc-4b2d-81bc-c721198867ca",
+      "date": "2020-05-13",
+      "amount": "500",
+      "description": "101010"
+    },
+    {
+      "id": "04f372ef-e26a-4c83-8d74-f5af40c26633",
+      "date": "2020-05-14",
+      "amount": "35000",
+      "description": "Моя зарплатка"
+    },
+    {
+      "id": "3c66863c-4e3d-43a8-8db7-9ab73d913f9b",
+      "date": "2020-05-14",
+      "amount": "5000",
+      "description": "dfdfgdfg"
+    },
+    {
+      "id": "a079ff18-4562-4529-8157-1333866bfd48",
+      "date": "2020-05-13",
+      "amount": "234",
+      "description": "ываыва"
+    },
+    {
+      "id": "24772f99-81a1-494e-8ea4-a02ce7cc2cc1",
+      "date": "2020-05-14",
+      "amount": "345",
+      "description": "dfgdfg"
+    },
+    {
+      "id": "1903908b-dd17-4191-a4db-97eec625910a",
+      "date": "2020-05-31",
+      "amount": "666",
+      "description": "Hell"
     }
   ],
   "receipts": [
@@ -75,6 +117,52 @@
           "unit": "Л",
           "cost": "35",
           "count": "0.5"
+        }
+      ]
+    },
+    {
+      "id": "7498d684-44d9-442b-a7f8-b2dca17e52d8",
+      "date": "Wed May 13 2020 12:28:07 GMT+0500 (Екатеринбург, стандартное время)",
+      "shop": "sdfsdf",
+      "products": [
+        {
+          "id": "5111e0a7-d2e3-40a0-ac16-44a991bb0357",
+          "category": "Еда",
+          "name": "sdfsdf",
+          "unit": "Шт",
+          "cost": "333",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "a99ccaca-a034-4680-b8c6-366f6d6612b9",
+      "date": "2020-05-13",
+      "shop": "Монетка",
+      "products": [
+        {
+          "id": "a6a5d2d5-d7c2-4b42-a3e3-fdbb362d8c72",
+          "category": "Еда",
+          "name": "Сыр",
+          "unit": "Кг",
+          "cost": "427.84",
+          "count": "0.355"
+        },
+        {
+          "id": "bb4b6306-14c9-4afd-aa6b-669001ffab7e",
+          "category": "Еда",
+          "name": "Хлеб",
+          "unit": "Шт",
+          "cost": "35.14",
+          "count": 1
+        },
+        {
+          "id": "bcdd13d2-20af-4535-ab06-2db266d17c8e",
+          "category": "Бытовые товары",
+          "name": "Пакет для мусора",
+          "unit": "Шт",
+          "cost": "47.99",
+          "count": 1
         }
       ]
     }
