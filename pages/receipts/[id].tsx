@@ -21,7 +21,7 @@ export default function Receipt({ data }) {
           </thead>
           <tbody>
             {data.products.map((item, index) => (
-              <tr key={item.id} className={'peceipt'}>
+              <tr key={item.id} className='peceipt'>
                 <td>{index + 1}</td>
                 <td>{item.name}</td>
                 <td>{`${item.count} ${item.unit}.`}</td>

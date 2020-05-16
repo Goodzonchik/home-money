@@ -37,9 +37,9 @@ export default function ProductAdd({
 
   return (
     <>
-      <div className={'product-container'}>
-        <div className={'product-form'}>
-          <div className={'product-form-group'}>
+      <div className='product-container'>
+        <div className='product-form'>
+          <div className='product-form-group'>
             <div className='form-row'>
               <label>Название</label>
               <input
@@ -58,7 +58,7 @@ export default function ProductAdd({
               </select>
             </div>
           </div>
-          <div className={'product-form-group'}>
+          <div className='product-form-group'>
             <div className='form-row'>
               <div
                 style={{
@@ -101,14 +101,14 @@ export default function ProductAdd({
             </div>
           </div>
         </div>
-        <div className={'product-form-footer'}>
+        <div className='product-form-footer'>
           <div>
             <strong>
               <span>Итого: </span>
               {product.count * product.cost || 0}
             </strong>
           </div>
-          <button className={'remove-button'} onClick={removeItem}>
+          <button className='remove-button' onClick={removeItem}>
             Удалить
           </button>
         </div>

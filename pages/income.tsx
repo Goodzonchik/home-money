@@ -29,7 +29,7 @@ export default function Receipts(props) {
             </thead>
             <tbody>
               {income.map((item) => (
-                <tr key={item.id} className={'peceipt'}>
+                <tr key={item.id} className='peceipt'>
                   <td>{dateFormatter(item.date)}</td>
                   <td>{item.amount} руб.</td>
                   <td>{item.description}</td>

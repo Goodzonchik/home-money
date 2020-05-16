@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Router from 'next/router';
 
 import * as uuid from 'uuid';
@@ -39,13 +39,17 @@ export default function IncomeAdd() {
     setIncome({ ...income, amount: event.target.value });
   }
 
+  function defaultSubmitHandler(event) {
+    event.preventDefault();
+  }
+
   return (
     <>
       <Layout title='Добавление дохода'>
         <h1>Добавление дохода</h1>
 
-        <form onSubmit={(e) => e.preventDefault()}>
-          <div className={'form-row'}>
+        <form onSubmit={defaultSubmitHandler}>
+          <div className='form-row'>
             <label>Дата</label>
             <input
               type='date'
@@ -53,11 +57,11 @@ export default function IncomeAdd() {
               onChange={changeDate}
             ></input>
           </div>
-          <div className={'form-row'}>
+          <div className='form-row'>
             <label>Сумма</label>
             <input value={income.amount} onChange={changeAmount}></input>
           </div>
-          <div className={'form-row'}>
+          <div className='form-row'>
             <label>Описание</label>
             <textarea
               value={income.description}

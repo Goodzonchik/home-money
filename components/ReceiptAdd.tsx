@@ -50,7 +50,7 @@ export default function ReceiptAdd() {
     setReceipt({ ...receipt, products });
   }
 
-  function removeProduct(id) {
+  function removeProduct(id: string) {
     const products = receipt.products.filter((product) => product.id !== id);
     setReceipt({ ...receipt, products });
   }
@@ -63,13 +63,17 @@ export default function ReceiptAdd() {
     setReceipt({ ...receipt, date: event.target.value });
   }
 
+  function defaultSubmitHandler(event) {
+    event.preventDefault();
+  }
+
   return (
     <>
       <Layout title='Добавление чека'>
         <h1>Добавление чека</h1>
 
-        <form onSubmit={(e) => e.preventDefault()}>
-          <div className={'form-row'}>
+        <form onSubmit={defaultSubmitHandler}>
+          <div className='form-row'>
             <label>Дата</label>
             <input
               type='date'
@@ -77,7 +81,7 @@ export default function ReceiptAdd() {
               onChange={changeDate}
             ></input>
           </div>
-          <div className={'form-row'}>
+          <div className='form-row'>
             <label>Название магазина</label>
             <input value={receipt.shop} onChange={changeShop}></input>
           </div>
