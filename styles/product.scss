@@ -1,0 +1,30 @@
+.product-container {
+  margin: 0.5em 0;
+  border: 1px solid #bdbdbd;
+}
+
+.product-form-group {
+  width: 49%;
+}
+
+.product-form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 1em;
+}
+
+.product-form-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 0 1em 1em 1em;
+  align-items: baseline;
+}
+
+.double-mode {
+  margin: 0;
+  width: 49%;
+}

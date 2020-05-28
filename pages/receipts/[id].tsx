@@ -9,9 +9,9 @@ export default function Receipt({ data }) {
         <h1>
           Чек от {dateFormatter(data.date)} из магазина "{data.shop}"
         </h1>
-        <table>
+        <table className='table'>
           <thead>
-            <tr>
+            <tr className='table__head-row'>
               <td>№</td>
               <td>Название</td>
               <td>Количество</td>
@@ -21,7 +21,7 @@ export default function Receipt({ data }) {
           </thead>
           <tbody>
             {data.products.map((item, index) => (
-              <tr key={item.id} className='peceipt'>
+              <tr key={item.id} className='table__body-row'>
                 <td>{index + 1}</td>
                 <td>{item.name}</td>
                 <td>{`${item.count} ${item.unit}.`}</td>
@@ -32,7 +32,7 @@ export default function Receipt({ data }) {
           </tbody>
           <tfoot>
             <tr>
-              <td colSpan={5}>
+              <td className='table__foot-cell' colSpan={5}>
                 <strong>
                   <span>Итого: </span>
                   {calcTotal(data.products)}

@@ -74,16 +74,21 @@ export default function ReceiptAdd() {
 
         <form onSubmit={defaultSubmitHandler}>
           <div className='form-row'>
-            <label>Дата</label>
+            <label className='form-row__label'>Дата</label>
             <input
+              className='form-row__field'
               type='date'
               value={receipt.date}
               onChange={changeDate}
             ></input>
           </div>
           <div className='form-row'>
-            <label>Название магазина</label>
-            <input value={receipt.shop} onChange={changeShop}></input>
+            <label className='form-row__label'>Название магазина</label>
+            <input
+              className='form-row__field'
+              value={receipt.shop}
+              onChange={changeShop}
+            ></input>
           </div>
           {receipt.products.map((product) => (
             <ProductAdd
@@ -105,8 +110,12 @@ export default function ReceiptAdd() {
               justifyContent: 'space-between',
             }}
           >
-            <button onClick={save}>Сохранить</button>
-            <button onClick={addProduct}>Добавить продукт</button>
+            <button className='button' onClick={save}>
+              Сохранить
+            </button>
+            <button className='button' onClick={addProduct}>
+              Добавить продукт
+            </button>
           </div>
         </form>
       </Layout>

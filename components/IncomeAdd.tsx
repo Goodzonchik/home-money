@@ -27,16 +27,10 @@ export default function IncomeAdd() {
         });
   }
 
-  function changeDate(event) {
-    setIncome({ ...income, date: event.target.value });
-  }
-
-  function changeDescription(event) {
-    setIncome({ ...income, description: event.target.value });
-  }
-
-  function changeAmount(event) {
-    setIncome({ ...income, amount: event.target.value });
+  function changeIncome(event) {
+    const newIncome = { ...income };
+    newIncome[event.target.name] = event.target.value;
+    setIncome(newIncome);
   }
 
   function defaultSubmitHandler(event) {
@@ -44,35 +38,44 @@ export default function IncomeAdd() {
   }
 
   return (
-    <>
-      <Layout title='Добавление дохода'>
-        <h1>Добавление дохода</h1>
+    <Layout title='Добавление дохода'>
+      <h1>Добавление дохода</h1>
 
-        <form onSubmit={defaultSubmitHandler}>
-          <div className='form-row'>
-            <label>Дата</label>
-            <input
-              type='date'
-              value={income.date}
-              onChange={changeDate}
-            ></input>
-          </div>
-          <div className='form-row'>
-            <label>Сумма</label>
-            <input value={income.amount} onChange={changeAmount}></input>
-          </div>
-          <div className='form-row'>
-            <label>Описание</label>
-            <textarea
-              value={income.description}
-              onChange={changeDescription}
-            ></textarea>
-          </div>
-          <div>
-            <button onClick={save}>Save</button>
-          </div>
-        </form>
-      </Layout>
-    </>
+      <form onSubmit={defaultSubmitHandler}>
+        <div className='form-row'>
+          <label className='form-row__label'>Дата</label>
+          <input
+            type='date'
+            className='form-row__field'
+            name='date'
+            value={income.date}
+            onChange={changeIncome}
+          ></input>
+        </div>
+        <div className='form-row'>
+          <label className='form-row__label'>Сумма</label>
+          <input
+            name='amount'
+            className='form-row__field'
+            value={income.amount}
+            onChange={changeIncome}
+          ></input>
+        </div>
+        <div className='form-row'>
+          <label className='form-row__label'>Описание</label>
+          <textarea
+            name='description'
+            className='form-row__field form-row__field_textarea'
+            value={income.description}
+            onChange={changeIncome}
+          ></textarea>
+        </div>
+        <div>
+          <button className='button' onClick={save}>
+            Save
+          </button>
+        </div>
+      </form>
+    </Layout>
   );
 }

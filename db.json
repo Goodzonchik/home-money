@@ -84,6 +84,18 @@
       "date": "2020-05-31",
       "amount": "666",
       "description": "Hell"
+    },
+    {
+      "id": "ad862486-f5b9-48fd-a818-2b5a9f4a47fb",
+      "date": "2020-05-28",
+      "amount": "5053",
+      "description": "Тест новой функции"
+    },
+    {
+      "id": "50f843d2-c319-4301-8544-3ffdd7a2696d",
+      "date": "2020-05-29",
+      "amount": "3424",
+      "description": "sdsdfsdf"
     }
   ],
   "receipts": [

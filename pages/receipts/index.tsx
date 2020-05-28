@@ -19,9 +19,9 @@ export default function Receipts(props) {
         </h1>
 
         {receipts.length > 0 ? (
-          <table>
+          <table className='table'>
             <thead>
-              <tr>
+              <tr className='table__head-row'>
                 <td>Дата</td>
                 <td>Магазин</td>
                 <td>Сумма</td>
@@ -30,7 +30,7 @@ export default function Receipts(props) {
             </thead>
             <tbody>
               {receipts.map((item) => (
-                <tr key={item.id} className='peceipt'>
+                <tr key={item.id} className='table__body-row'>
                   <td>{dateFormatter(item.date)}</td>
                   <td>{item.shop}</td>
                   <td>{calcTotal(item.products)} руб.</td>

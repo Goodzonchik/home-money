@@ -17,21 +17,6 @@ export default function Nav() {
           </li>
         ))}
       </ul>
-
-      <style jsx>{`
-        .nav-bar {
-          width: 100%;
-          list-style-type: none;
-          display: flex;
-          justify-content: space-between;
-          font-size: 1.5em;
-          box-sizing: border-box;
-          padding: 1em;
-          background-color: #fdfdfd;
-          margin: 0;
-          border-bottom: 1px solid #cacaca;
-        }
-      `}</style>
     </>
   );
 }

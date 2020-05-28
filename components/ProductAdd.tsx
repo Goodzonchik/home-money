@@ -14,6 +14,8 @@ const categoryList = [
   'Другое',
 ];
 
+const unitList = ['Шт', 'Л', 'Кг', 'М'];
+
 export default function ProductAdd({
   change,
   remove,
@@ -41,20 +43,26 @@ export default function ProductAdd({
         <div className='product-form'>
           <div className='product-form-group'>
             <div className='form-row'>
-              <label>Название</label>
+              <label className='form-row__label'>Название</label>
               <input
                 name='name'
+                className='form-row__field'
                 value={product.name}
                 onChange={changeItem}
               ></input>
             </div>
             <div className='form-row'>
-              <label>Единицы измерения</label>
-              <select name='unit' onChange={changeItem}>
-                <option value={'Шт'}>Шт</option>
-                <option value={'Л'}>Л</option>
-                <option value={'Кг'}>Кг</option>
-                <option value={'М'}>М</option>
+              <label className='form-row__label'>Единицы измерения</label>
+              <select
+                name='unit'
+                className='form-row__field'
+                onChange={changeItem}
+              >
+                {unitList.map((unit) => (
+                  <option key={unit} value={unit}>
+                    {unit}
+                  </option>
+                ))}
               </select>
             </div>
           </div>
@@ -67,18 +75,20 @@ export default function ProductAdd({
                   width: '100%',
                 }}
               >
-                <div className='form-row' style={{ margin: '0', width: '49%' }}>
-                  <label>Количество</label>
+                <div className='form-row double-mode'>
+                  <label className='form-row__label'>Количество</label>
                   <input
                     name='count'
+                    className='form-row__field'
                     value={product.count}
                     onChange={changeItem}
                   ></input>
                 </div>
-                <div className='form-row' style={{ margin: '0', width: '49%' }}>
-                  <label>Цена</label>
+                <div className='form-row double-mode'>
+                  <label className='form-row__label'>Цена</label>
                   <input
                     name='cost'
+                    className='form-row__field'
                     value={product.cost}
                     onChange={changeItem}
                   ></input>
@@ -86,9 +96,10 @@ export default function ProductAdd({
               </div>
             </div>
             <div className='form-row'>
-              <label>Категория</label>
+              <label className='form-row__label'>Категория</label>
               <select
                 name='category'
+                className='form-row__field'
                 value={product.category}
                 onChange={changeItem}
               >
@@ -108,39 +119,11 @@ export default function ProductAdd({
               {product.count * product.cost || 0}
             </strong>
           </div>
-          <button className='remove-button' onClick={removeItem}>
+          <button className='button button_mode-alert' onClick={removeItem}>
             Удалить
           </button>
         </div>
       </div>
-
-      <style jsx>{`
-        .product-container {
-          margin: 0.5em 0;
-          border: 1px solid #bdbdbd;
-        }
-
-        .product-form-group {
-          width: 49%;
-        }
-
-        .product-form {
-          width: 100%;
-          display: flex;
-          justify-content: space-between;
-          flex-direction: row;
-          padding: 1em;
-        }
-
-        .product-form-footer {
-          width: 100%;
-          display: flex;
-          justify-content: space-between;
-          flex-direction: row;
-          padding: 0 1em 1em 1em;
-          align-items: baseline;
-        }
-      `}</style>
     </>
   );
 }

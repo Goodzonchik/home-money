@@ -1,0 +1,22 @@
+@import './styles/layout.scss';
+@import './styles/nav.scss';
+@import './styles/form-row.scss';
+@import './styles/table.scss';
+@import './styles/button.scss';
+
+@import './styles/product.scss';
+@import './styles/tab.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa;
+  height: 100vh;
+  width: 100vw;
+  font: 1em 'Fira Sans', sans-serif;
+}
