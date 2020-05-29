@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Router from 'next/router';
 
-import * as uuid from 'uuid';
 import axios from 'axios';
 
 import Layout from './Layout';
+import uuid from '../utils/uuid';
 
 const initIncome = {
   date: '',
@@ -18,7 +18,7 @@ export default function IncomeAdd() {
   function save() {
     if (income.date && income.amount && income.description)
       axios
-        .post('api/add-income', { id: uuid.v4(), ...income })
+        .post('api/add-income', { id: uuid(), ...income })
         .then(() => {
           Router.push('/income');
         })

@@ -1,29 +1,17 @@
 import { useState } from 'react';
 
-const categoryList = [
-  'Еда',
-  'Гигиена',
-  'Автомобиль и транспорт',
-  'Бытовые товары',
-  'Здоровье',
-  'Связь',
-  'Подарки',
-  'Животные',
-  'Одежда и обувь',
-  'Услуги ЖКХ',
-  'Другое',
-];
-
-const unitList = ['Шт', 'Л', 'Кг', 'М'];
-
 export default function ProductAdd({
   change,
   remove,
   prod,
+  categories,
+  units,
 }: {
   change: (product) => void;
   remove: (id: string) => void;
   prod: any;
+  categories: string[];
+  units: string[];
 }) {
   const [product, setProduct] = useState(prod);
 
@@ -58,7 +46,7 @@ export default function ProductAdd({
                 className='form-row__field'
                 onChange={changeItem}
               >
-                {unitList.map((unit) => (
+                {units.map((unit) => (
                   <option key={unit} value={unit}>
                     {unit}
                   </option>
@@ -103,7 +91,7 @@ export default function ProductAdd({
                 value={product.category}
                 onChange={changeItem}
               >
-                {categoryList.map((cat) => (
+                {categories.map((cat) => (
                   <option key={cat} value={cat}>
                     {cat}
                   </option>

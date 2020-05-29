@@ -2,12 +2,12 @@ import Layout from '../../components/Layout';
 import dateFormatter from '../../utils/formatters';
 import calcTotal from '../../utils/calculation';
 
-export default function Receipt({ data }) {
+export default function Receipt({ receipt }) {
   return (
     <>
       <Layout title={'Главная'}>
         <h1>
-          Чек от {dateFormatter(data.date)} из магазина "{data.shop}"
+          Чек от {dateFormatter(receipt.date)} из магазина "{receipt.shop}"
         </h1>
         <table className='table'>
           <thead>
@@ -20,7 +20,7 @@ export default function Receipt({ data }) {
             </tr>
           </thead>
           <tbody>
-            {data.products.map((item, index) => (
+            {receipt.products.map((item, index) => (
               <tr key={item.id} className='table__body-row'>
                 <td>{index + 1}</td>
                 <td>{item.name}</td>
@@ -35,7 +35,7 @@ export default function Receipt({ data }) {
               <td className='table__foot-cell' colSpan={5}>
                 <strong>
                   <span>Итого: </span>
-                  {calcTotal(data.products)}
+                  {calcTotal(receipt.products)}
                 </strong>
               </td>
             </tr>
@@ -65,10 +65,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const data = db.get('receipts').find({ id: params.id }).value();
+  const receipt = db.get('receipts').find({ id: params.id }).value();
   return {
-    props: {
-      data,
-    },
+    props: { receipt },
   };
 }

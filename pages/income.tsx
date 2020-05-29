@@ -51,8 +51,8 @@ export async function getServerSideProps() {
   const adapter = new FileSync('db.json');
   const db = low(adapter);
 
-  const data = db.get('income').value() || [];
+  const income = db.get('income').value() || [];
   return {
-    props: { income: data },
+    props: { income },
   };
 }

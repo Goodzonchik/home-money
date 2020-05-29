@@ -1,21 +1,29 @@
 import { useState } from 'react';
 import Router from 'next/router';
 
-import * as uuid from 'uuid';
-
 import axios from 'axios';
 import ProductAdd from './ProductAdd';
 import Layout from './Layout';
 import calcTotal from '../utils/calculation';
+import uuid from '../utils/uuid';
 
 const initReceipt = {
-  id: uuid.v4(),
+  id: uuid(),
   date: new Date().toString(),
   shop: '',
   products: [],
 };
 
-export default function ReceiptAdd() {
+const initProduct = () => {
+  return {
+    id: uuid(),
+    date: new Date().toString(),
+    shop: '',
+    products: [],
+  };
+};
+
+export default function ReceiptAdd({ categories, units }) {
   const [receipt, setReceipt] = useState(initReceipt);
 
   function save() {
@@ -32,14 +40,7 @@ export default function ReceiptAdd() {
 
   function addProduct() {
     const products = receipt.products;
-    products.push({
-      id: uuid.v4(),
-      category: '',
-      name: '',
-      unit: '',
-      cost: 0,
-      count: 1,
-    });
+    products.push(initProduct());
     setReceipt({ ...receipt, products });
   }
 
@@ -55,12 +56,10 @@ export default function ReceiptAdd() {
     setReceipt({ ...receipt, products });
   }
 
-  function changeShop(event) {
-    setReceipt({ ...receipt, shop: event.target.value });
-  }
-
-  function changeDate(event) {
-    setReceipt({ ...receipt, date: event.target.value });
+  function changeReceipt(event) {
+    const innerReceipt = receipt;
+    innerReceipt[event.target.name] = event.target.value;
+    setReceipt({ ...innerReceipt });
   }
 
   function defaultSubmitHandler(event) {
@@ -78,8 +77,9 @@ export default function ReceiptAdd() {
             <input
               className='form-row__field'
               type='date'
+              name='date'
               value={receipt.date}
-              onChange={changeDate}
+              onChange={changeReceipt}
             ></input>
           </div>
           <div className='form-row'>
@@ -87,12 +87,15 @@ export default function ReceiptAdd() {
             <input
               className='form-row__field'
               value={receipt.shop}
-              onChange={changeShop}
+              name='shop'
+              onChange={changeReceipt}
             ></input>
           </div>
           {receipt.products.map((product) => (
             <ProductAdd
               key={product.id}
+              categories={categories}
+              units={units}
               prod={product}
               change={changeProduct}
               remove={removeProduct}

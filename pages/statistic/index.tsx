@@ -1,9 +1,9 @@
 import Layout from '../../components/Layout';
 
-import * as uuid from 'uuid';
 import Tab from '../../components/Tab/Tab';
 import CategoryStatistic from '../../components/Statistic/CategoryStatistic';
 import ShopStatistic from '../../components/Statistic/ShopStatistic';
+import uuid from '../../utils/uuid';
 
 const getByCategory = (products: any[], category: string) => {
   return products
@@ -23,7 +23,7 @@ export default function Statistic({ receipts, income, categories }) {
   const categoryList = categories
     .map((cat) => {
       return {
-        id: uuid.v4(),
+        id: uuid(),
         category: cat,
         value: getByCategory(products, cat),
       };
@@ -82,7 +82,7 @@ export async function getServerSideProps() {
 
   const receipts = db.get('receipts').value() || [];
   const income = db.get('income').value() || [];
-  const categories = db.get('category').value() || [];
+  const categories = db.get('categories').value() || [];
   return {
     props: { receipts, income, categories },
   };
