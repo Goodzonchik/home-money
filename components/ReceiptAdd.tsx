@@ -17,9 +17,11 @@ const initReceipt = {
 const initProduct = () => {
   return {
     id: uuid(),
-    date: new Date().toString(),
-    shop: '',
-    products: [],
+    category: '',
+    name: '',
+    unit: '',
+    cost: 0,
+    count: 1,
   };
 };
 

@@ -20,4 +20,9 @@
     background-color: #f7f7f7;
     border-top: 1px solid #c5c5c5;
   }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
 }

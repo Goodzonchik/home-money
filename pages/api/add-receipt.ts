@@ -1,3 +1,5 @@
+import { db } from '../../utils/db';
+
 interface Receipt {
   id: string;
   shop: string;
@@ -11,11 +13,6 @@ interface Product {
   category: string;
   name: string;
 }
-
-const low = require('lowdb');
-const FileSync = require('lowdb/adapters/FileSync');
-const adapter = new FileSync('db.json');
-const db = low(adapter);
 
 db.defaults({ receipts: [] }).write();
 

@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import Layout from '../components/Layout';
 import dateFormatter from '../utils/formatters';
+import { db } from '../utils/db';
 
 export default function Receipts(props) {
   const [income, setIncome] = useState([]);
@@ -46,11 +47,6 @@ export default function Receipts(props) {
 }
 
 export async function getServerSideProps() {
-  const low = require('lowdb');
-  const FileSync = require('lowdb/adapters/FileSync');
-  const adapter = new FileSync('db.json');
-  const db = low(adapter);
-
   const income = db.get('income').value() || [];
   return {
     props: { income },

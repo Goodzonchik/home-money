@@ -104,7 +104,7 @@ export default function ProductAdd({
           <div>
             <strong>
               <span>Итого: </span>
-              {product.count * product.cost || 0}
+              {(product.count * product.cost || 0).toFixed(2)}
             </strong>
           </div>
           <button className='button button_mode-alert' onClick={removeItem}>

@@ -4,6 +4,7 @@ import Tab from '../../components/Tab/Tab';
 import CategoryStatistic from '../../components/Statistic/CategoryStatistic';
 import ShopStatistic from '../../components/Statistic/ShopStatistic';
 import uuid from '../../utils/uuid';
+import { db } from '../../utils/db';
 
 const getByCategory = (products: any[], category: string) => {
   return products
@@ -75,11 +76,6 @@ export default function Statistic({ receipts, income, categories }) {
 }
 
 export async function getServerSideProps() {
-  const low = require('lowdb');
-  const FileSync = require('lowdb/adapters/FileSync');
-  const adapter = new FileSync('db.json');
-  const db = low(adapter);
-
   const receipts = db.get('receipts').value() || [];
   const income = db.get('income').value() || [];
   const categories = db.get('categories').value() || [];

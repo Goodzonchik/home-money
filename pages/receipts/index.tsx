@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import dateFormatter from '../../utils/formatters';
 import calcTotal from '../../utils/calculation';
+import { db } from '../../utils/db';
 
 export default function Receipts(props) {
   const [receipts, setReceipts] = useState([]);
@@ -14,7 +15,7 @@ export default function Receipts(props) {
   return (
     <>
       <Layout title={'Главная'}>
-        <h1 style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <h1 className='layout__header'>
           Покупки <Link href={'/receipt-add-container'}>Добавить</Link>
         </h1>
 
@@ -50,11 +51,6 @@ export default function Receipts(props) {
 }
 
 export async function getServerSideProps() {
-  const low = require('lowdb');
-  const FileSync = require('lowdb/adapters/FileSync');
-  const adapter = new FileSync('db.json');
-  const db = low(adapter);
-
   const receipts = db.get('receipts').value() || [];
   return {
     props: { receipts },

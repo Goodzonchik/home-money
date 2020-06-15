@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function ShopStatistic({ receipts }) {
   const shops = [...new Set(receipts.map((receipt) => receipt.shop))];
 

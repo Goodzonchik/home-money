@@ -1,4 +1,3 @@
-import React from 'react';
 import { TabItem } from './Tab';
 
 export default function TabHeader({
